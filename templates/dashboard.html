@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4 shadow-sm">
+    <h4>{{ 'Risk Analytics Dashboard' if lang == 'en' else 'ঝুঁকির বিশ্লেষণ' }}</h4>
+    <canvas id="ageRiskChart" height="80"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ages = {{ ages | safe }};
+    const risks = {{ risks | safe }};
+
+    const ctx = document.getElementById('ageRiskChart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'High Risk (1) / Low Risk (0)',
+                data: ages.map((age, i) => ({ x: age, y: risks[i] })),
+                backgroundColor: 'rgba(255,99,132,0.7)'
+            }]
+        },
+        options: {
+            scales: {
+                x: { title: { display: true, text: 'Age' }},
+                y: { title: { display: true, text: 'Risk (1=High)' }, ticks: { stepSize: 1, min: -0.1, max: 1.1 } }
+            }
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4 shadow-sm">
+    <h3 class="text-center text-primary mb-4">
+        {{ 'Prediction Result' if lang == 'en' else 'ফলাফল' }}
+    </h3>
+    <div class="alert alert-info">
+        <p><strong>{{ 'Risk Level' if lang == 'en' else 'ঝুঁকির স্তর' }}:</strong> {{ prediction }}</p>
+        <p><strong>{{ 'Probability' if lang == 'en' else 'সম্ভাবনা' }}:</strong> {{ probability }}%</p>
+        <p><strong>{{ 'Time' if lang == 'en' else 'সময়' }}:</strong> {{ timestamp }}</p>
+        <p><strong>{{ 'Advice' if lang == 'en' else 'পরামর্শ' }}:</strong></p>
+        <pre style="white-space: pre-wrap;">{{ advice }}</pre>
+    </div>
+    <a href="/" class="btn btn-secondary">{{ 'Back to Form' if lang == 'en' else 'ফর্মে ফিরে যান' }}</a>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+footer {
+    color: #6c757d;
+}
+
+/* Card */
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #007BFF;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-outline-primary, .btn-outline-secondary {
+    font-weight: 500;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Inputs */
+.form-control:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Table */
+.table th {
+    background-color: #e9ecef;
+}
+
+.display-6 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Animations */
+.animated {
+    animation-duration: 0.7s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}

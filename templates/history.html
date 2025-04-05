@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4 shadow-sm">
+    <h4>{{ 'Prediction History' if lang == 'en' else 'ভবিষ্যদ্বাণী ইতিহাস' }}</h4>
+    <div class="table-responsive mt-3">
+        <table class="table table-bordered table-sm table-hover">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th><th>Age</th><th>Gender</th><th>Prediction</th><th>Prob (%)</th><th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in history %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[11] }}</td>
+                    <td>{{ row[12] }}</td>
+                    <td>{{ row[13] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
